@@ -20,7 +20,6 @@ import (
 //	string, a PDF string literal
 //	keyword, a PDF keyword
 //	name, a PDF name without the leading slash
-//
 type token interface{}
 
 // A name is a PDF name, without the leading slash.
@@ -79,7 +78,7 @@ func (b *buffer) readByte() byte {
 }
 
 func (b *buffer) errorf(format string, args ...interface{}) {
-	panic(fmt.Errorf(format, args...))
+	fmt.Errorf(format, args...)
 }
 
 func (b *buffer) reload() bool {
